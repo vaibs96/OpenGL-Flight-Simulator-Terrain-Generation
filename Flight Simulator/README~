@@ -1,0 +1,51 @@
+Name: Arren Prior
+Student ID: 200792567
+Module: Computer Graphics
+Module Code: COMP3811
+
+ASSUMPTIONS & INFORMATION
+-------------------------
+
+Included are two folders. The 'rendering' folder contains all code used for rendering the terrain using OpenGL. The 'textures' folder contains all of the images used for both height maps and textures.
+
+* I can only garantee that my code will work with the heightmaps I have provided. Though it should work with all sizes and images there may be something I have overlooked, so please use the images provided, with the parameters and commands outlined below. 
+
+* Will not work with non square images.
+
+* Have improved the performance. Tested on DEC-10 machines on up to 2048 x 2048 pixel images and performance is above 30fps.
+
+* Unless you enter all of the commands and arguments to run the code as outlined below I cannot garantee that the program will work. The code may hang or not respond at all if the instructions are not followed exactly. Any problems please contact me.
+
+* There may be some warnings when compiling but these do not effect the running of the code. There should be no errors when compiling as I have run all stages of the code in DEC-10 multiple times.
+
+* 80 character line limit was not followed.
+
+COMPILING & RUNNING
+-------------------
+
+To compile the code, while in the 'rendering' directory, simply type the following (without the '$' symbol):
+
+        $ qmake -project QT+=opengl CONFIG+=c++11 LIBS+=-lGLU
+        $ qmake
+        $ make
+        $ make clean
+        
+To run the compiled code, while in the 'rendering' directory, simply execute the code with the following commands and two arguments (without the '$' symbol):
+
+        $ ./rendering PATH/image scale
+        
+The initial command './rendering' runs the executable. The 'PATH/image' argument is the path to the image file. The 'scale' argument allows you to specify a scaling for the height of the terrain. This was introduced to help fix some terrains being too flat by default and others being too pointy. Below I have supplied some example commands that show off some good scaling and mapping:
+
+        $ ./rendering ../textures/2048.png 1
+        $ ./rendering ../textures/128.bmp 40
+        $ ./rendering ../textures/512_2.jpg 20
+        $ ./rendering ../textures/1024.png 20
+        $ ./rendering ../textures/512.jpg 10
+        $ ./rendering ../textures/2048_2.png 10
+        
+        
+
+
+
+
+
